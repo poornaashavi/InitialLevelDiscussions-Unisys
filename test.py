@@ -159,9 +159,7 @@ def RY_layer(w):
 def entangling_layer(nqubits):
     """Layer of CNOTs followed by another shifted layer of CNOT.
     """
-    # In other words it should apply something like :
-    # CNOT  CNOT  CNOT  CNOT...  CNOT
-    #   CNOT  CNOT  CNOT...  CNOT
+    
     for i in range(0, nqubits - 1, 2):  # Loop over even indices: i=0,2,...N-2
         qml.CNOT(wires=[i, i + 1])
     for i in range(1, nqubits - 1, 2):  # Loop over odd indices:  i=1,3,...N-3
